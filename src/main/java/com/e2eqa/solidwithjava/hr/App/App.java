@@ -1,4 +1,4 @@
-package com.e2eqa.solidwithjava;
+package com.e2eqa.solidwithjava.hr.app;
 
 /**
  * Hello world!
