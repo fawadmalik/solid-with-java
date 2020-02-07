@@ -18,44 +18,28 @@ we are storing employees in the file system.
  */
 
 public class EmployeeRepository {
+	private EmployeeFileSerializer serializer;
 
-    public List<Employee> findAll(){
+	public EmployeeRepository(EmployeeFileSerializer serializer) {
+		this.serializer = serializer;
+	}
 
-        // Employees are kept in memory for simplicity
-        Employee anna = new FullTimeEmployee("Anna Smith", 2000);
-        Employee billy = new FullTimeEmployee("Billy Leech", 920);
+	public List<Employee> findAll() {
 
-        Employee steve = new PartTimeEmployee("Steve Jones", 800);
-        Employee magda = new PartTimeEmployee("Magda Iovan", 920);
+		// Employees are kept in memory for simplicity
+		Employee anna = new FullTimeEmployee("Anna Smith", 2000);
+		Employee billy = new FullTimeEmployee("Billy Leech", 920);
 
-        return Arrays.asList(anna, billy, steve, magda);
-    }
-    
-    public static void save(Employee employee){
-        try {
-            StringBuilder sb = new StringBuilder();
-            sb.append("### EMPLOYEE RECORD ####");
-            sb.append(System.lineSeparator());
-            sb.append("NAME: ");
-            sb.append(employee.getFullName());
-            sb.append(System.lineSeparator());
-            sb.append("POSITION: ");
-            sb.append(employee.getClass().getTypeName());
-            sb.append(System.lineSeparator());
-            sb.append("EMAIL: ");
-            sb.append(employee.getEmail());
-            sb.append(System.lineSeparator());
-            sb.append("MONTHLY WAGE: ");
-            sb.append(employee.getMonthlyIncome());
-            sb.append(System.lineSeparator());
+		Employee steve = new PartTimeEmployee("Steve Jones", 800);
+		Employee magda = new PartTimeEmployee("Magda Iovan", 920);
 
-            Path path = Paths.get(employee.getFullName()
-                    .replace(" ","_") + ".rec");
-            Files.write(path, sb.toString().getBytes());
+		return Arrays.asList(anna, billy, steve, magda);
+	}
 
-            System.out.println("Saved employee " + employee.toString());
-        } catch (IOException e){
-            System.out.println("ERROR: Could not save employee. " + e);
-        }
-    }
+	public void save(Employee employee) throws IOException {
+		String serializedString = this.serializer.serialize(employee);
+
+		Path path = Paths.get(employee.getFullName().replace(" ", "_") + ".rec");
+		Files.write(path, serializedString.toString().getBytes());
+	}
 }
