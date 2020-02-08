@@ -1,6 +1,6 @@
-package com.e2eqa.solidwithjava.hr.app.persistence;
+package com.e2eqa.solidwithjava.hr.persistence;
 
-import com.e2eqa.solidwithjava.hr.app.personnel.Employee;
+import com.e2eqa.solidwithjava.hr.personnel.Employee;
 
 public class EmployeeFileSerializer {
 	public String serialize(Employee employee) {

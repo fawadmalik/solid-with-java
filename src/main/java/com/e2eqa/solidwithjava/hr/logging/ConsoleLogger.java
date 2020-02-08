@@ -1,4 +1,4 @@
-package com.e2eqa.solidwithjava.hr.app.logging;
+package com.e2eqa.solidwithjava.hr.logging;
 
 public class ConsoleLogger {
 	public void writeInfo(String msg) {
