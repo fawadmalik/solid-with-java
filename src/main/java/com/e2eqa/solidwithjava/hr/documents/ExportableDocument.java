@@ -1,4 +1,4 @@
-package com.e2eqa.solidwithjava.hr.app.documents;
+package com.e2eqa.solidwithjava.hr.documents;
 
 /*
 Common interface used in application when there is

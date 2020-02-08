@@ -1,4 +1,4 @@
-package com.e2eqa.solidwithjava.hr.app.personnel;
+package com.e2eqa.solidwithjava.hr.personnel;
 
 import java.io.IOException;
 import java.nio.file.Files;

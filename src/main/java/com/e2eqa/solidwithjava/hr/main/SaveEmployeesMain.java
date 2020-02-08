@@ -1,12 +1,12 @@
-package com.e2eqa.solidwithjava.hr.app.main;
+package com.e2eqa.solidwithjava.hr.main;
 
 import java.io.IOException;
 import java.util.List;
 
-import com.e2eqa.solidwithjava.hr.app.logging.ConsoleLogger;
-import com.e2eqa.solidwithjava.hr.app.persistence.EmployeeFileSerializer;
-import com.e2eqa.solidwithjava.hr.app.persistence.EmployeeRepository;
-import com.e2eqa.solidwithjava.hr.app.personnel.Employee;
+import com.e2eqa.solidwithjava.hr.logging.ConsoleLogger;
+import com.e2eqa.solidwithjava.hr.persistence.EmployeeFileSerializer;
+import com.e2eqa.solidwithjava.hr.persistence.EmployeeRepository;
+import com.e2eqa.solidwithjava.hr.personnel.Employee;
 
 public class SaveEmployeesMain {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.e2eqa.solidwithjava.hr.app.personnel;
+package com.e2eqa.solidwithjava.hr.personnel;
 
 public class PartTimeEmployee extends Employee {
     public PartTimeEmployee(String fullName, int monthlyIncome) {
