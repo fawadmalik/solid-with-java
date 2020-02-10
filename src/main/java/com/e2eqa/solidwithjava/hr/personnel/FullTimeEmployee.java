@@ -5,4 +5,10 @@ public class FullTimeEmployee extends Employee {
         super(fullName, monthlyIncome);
         this.setNbHoursPerWeek(40);
     }
+
+	@Override
+	public void requestTimeOff(int nbDays, Employee manager) {
+		// TODO Auto-generated method stub
+		
+	}
 }

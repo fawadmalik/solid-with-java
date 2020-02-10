@@ -1,7 +1,4 @@
-package hr.persistence;
-
-import hr.logging.ConsoleLogger;
-import hr.personnel.*;
+package com.e2eqa.solidwithjava.hr.persistence;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -9,6 +6,12 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
+
+import com.e2eqa.solidwithjava.hr.personnel.Employee;
+import com.e2eqa.solidwithjava.hr.personnel.FullTimeEmployee;
+import com.e2eqa.solidwithjava.hr.personnel.Intern;
+import com.e2eqa.solidwithjava.hr.personnel.PartTimeEmployee;
+import com.e2eqa.solidwithjava.hr.personnel.Subcontractor;
 
 /*
 Helper method to perform CRUD operations on employees. In a production

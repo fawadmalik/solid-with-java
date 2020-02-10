@@ -5,4 +5,10 @@ public class Intern extends Employee {
         super(fullName, monthlyIncome);
         setNbHoursPerWeek(nbHours);
     }
+
+	@Override
+	public void requestTimeOff(int nbDays, Employee manager) {
+		// TODO Auto-generated method stub
+		
+	}
 }

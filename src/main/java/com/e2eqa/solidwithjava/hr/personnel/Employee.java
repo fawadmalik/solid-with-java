@@ -28,6 +28,8 @@ public abstract class Employee {
                 "@globomanticscom.e2eqa.solidwithjava.hr.com";
     }
 
+    public abstract void requestTimeOff(int nbDays, Employee manager);
+
     @Override
     public String toString() {
         return this.firstName + " " +
