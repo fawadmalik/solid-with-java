@@ -1,21 +1,13 @@
 package com.e2eqa.solidwithjava.hr.main;
 
-import com.e2eqa.solidwithjava.hr.logging.ConsoleLogger;
-import com.e2eqa.solidwithjava.hr.persistence.EmployeeFileSerializer;
-import com.e2eqa.solidwithjava.hr.persistence.EmployeeRepository;
-import com.e2eqa.solidwithjava.hr.personnel.Employee;
+import java.util.Arrays;
+import java.util.List;
+
 import com.e2eqa.solidwithjava.hr.personnel.ServiceLicenseAgreement;
 import com.e2eqa.solidwithjava.hr.personnel.Subcontractor;
 
-import java.util.List;
-
 public class ApproveSLAMain {
     public static void main(String[] args) {
-        // Create dependencies
-        ConsoleLogger consoleLogger = new ConsoleLogger();
-        EmployeeFileSerializer employeeFileSerializer = new EmployeeFileSerializer();
-        EmployeeRepository repository = new EmployeeRepository(employeeFileSerializer);
-
         // Define SLA
         int minTimeOffPercent = 98;
         int maxResolutionDays = 2;
@@ -23,14 +15,21 @@ public class ApproveSLAMain {
                 minTimeOffPercent,
                 maxResolutionDays);
 
-        // Grab subcontractors
-        List<Employee> subcontractors = repository.findAll();
+        // Get collaborators from their own source
+        Subcontractor subcontractor1 = new Subcontractor(
+                "Rebekah Jackson",
+                "rebekah-jackson@abc.com",
+                3000,
+                15);
+        Subcontractor subcontractor2 = new Subcontractor(
+                "Harry Fitz",
+                "harryfitz@def.com",
+                3000, 15);
+        List<Subcontractor> collaborators = Arrays.asList(subcontractor1, subcontractor2);
 
-        for (Employee e : subcontractors){
-            if(e instanceof  Subcontractor){
-                Subcontractor s = (Subcontractor)e;
-                s.approveSLA(companySla);
-            }
+        // Check SLA
+        for (Subcontractor s : collaborators) {
+            s.approveSLA(companySla);
         }
     }
 }

@@ -6,9 +6,15 @@ public class Intern extends Employee {
         setNbHoursPerWeek(nbHours);
     }
 
-	@Override
-	public void requestTimeOff(int nbDays, Employee manager) {
-		// TODO Auto-generated method stub
-		
-	}
+    @Override
+    public void requestTimeOff(int nbDays, Employee manager) {
+                /*
+        HR business logic for time off for interns
+         */
+
+        System.out.println("Time off request for intern " +
+                this.getFullName() +
+                "; Nb days " + nbDays +
+                "; Requested from " + manager.getFullName());
+    }
 }

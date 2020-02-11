@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.e2eqa.solidwithjava.hr.logging.ConsoleLogger;
 import com.e2eqa.solidwithjava.hr.persistence.EmployeeFileSerializer;
-import com.e2eqa.solidwithjava.hr.persistence.EmployeeRepository;
+import com.e2eqa.solidwithjava.hr.persistence.EmployeeRepositoryBad;
 import com.e2eqa.solidwithjava.hr.personnel.Employee;
 
 public class SaveEmployeesMain {
@@ -14,7 +14,7 @@ public class SaveEmployeesMain {
     	EmployeeFileSerializer employeeFileSerializer = new EmployeeFileSerializer();
     	ConsoleLogger consoleLogger = new ConsoleLogger();
     	
-        EmployeeRepository repository = new EmployeeRepository(employeeFileSerializer);
+        EmployeeRepositoryBad repository = new EmployeeRepositoryBad(employeeFileSerializer);
         List<Employee> employees = repository.findAll();
 
         // Save all

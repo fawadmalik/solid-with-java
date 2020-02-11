@@ -1,18 +1,17 @@
 package com.e2eqa.solidwithjava.hr.main;
 
-import com.e2eqa.solidwithjava.hr.logging.ConsoleLogger;
-import com.e2eqa.solidwithjava.hr.persistence.EmployeeFileSerializer;
-import com.e2eqa.solidwithjava.hr.persistence.EmployeeRepository;
-import com.e2eqa.solidwithjava.hr.personnel.Employee;
-import com.e2eqa.solidwithjava.hr.taxes.FullTimeTaxCalculator;
-import com.e2eqa.solidwithjava.hr.taxes.TaxCalculator;
-import com.e2eqa.solidwithjava.hr.taxes.TaxCalculatorFactory;
-
 import java.text.NumberFormat;
 import java.util.List;
 import java.util.Locale;
 
-public class CalculateTaxesMain {
+import com.e2eqa.solidwithjava.hr.logging.ConsoleLogger;
+import com.e2eqa.solidwithjava.hr.persistence.EmployeeFileSerializer;
+import com.e2eqa.solidwithjava.hr.persistence.EmployeeRepository;
+import com.e2eqa.solidwithjava.hr.personnel.Employee;
+import com.e2eqa.solidwithjava.hr.taxes.TaxCalculator;
+import com.e2eqa.solidwithjava.hr.taxes.TaxCalculatorFactory;
+
+public class CalculateEmployeeTaxesMain {
     public static void main(String[] args) {
         // Create dependencies
         ConsoleLogger consoleLogger = new ConsoleLogger();
