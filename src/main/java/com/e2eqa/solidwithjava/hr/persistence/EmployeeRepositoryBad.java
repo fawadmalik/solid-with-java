@@ -11,6 +11,7 @@ import com.e2eqa.solidwithjava.hr.personnel.Employee;
 import com.e2eqa.solidwithjava.hr.personnel.FullTimeEmployee;
 import com.e2eqa.solidwithjava.hr.personnel.Intern;
 import com.e2eqa.solidwithjava.hr.personnel.PartTimeEmployee;
+import com.e2eqa.solidwithjava.hr.personnel.SubcontractorBad;
 
 /*
 Helper method to perform CRUD operations on employees. In a production
@@ -18,10 +19,10 @@ application we could use the database for persistence. In this demo,
 we are storing employees in the file system.
  */
 
-public class EmployeeRepository {
+public class EmployeeRepositoryBad {
     private EmployeeFileSerializer serializer;
 
-    public EmployeeRepository(EmployeeFileSerializer serializer) {
+    public EmployeeRepositoryBad(EmployeeFileSerializer serializer) {
         this.serializer = serializer;
     }
 
@@ -37,7 +38,10 @@ public class EmployeeRepository {
         Employee john = new Intern("John Lee", 300, 10);
         Employee catherine = new Intern("Catherine Allison", 500, 15);
 
-        return Arrays.asList(anna, billy, steve, magda, john, catherine);
+        // Subcontractors
+        Employee subcontractor = new SubcontractorBad("Rebekah Jackson", 3000);
+
+        return Arrays.asList(anna, billy, steve, magda, john, subcontractor, catherine);
     }
 
     public void save(Employee employee) throws IOException {
